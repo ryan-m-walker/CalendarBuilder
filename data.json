@@ -1,0 +1,138 @@
+{
+  "month": "February",
+  "monthLength": 28,
+  "numberOfWeeks": 4,
+  "firstOfMonthStr": "sunday",
+  "year": 2950,
+  "week": [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday"
+  ],
+  "calendar": [
+    [
+      {
+        "date": 1,
+        "day": "sunday"
+      },
+      {
+        "date": 2,
+        "day": "monday"
+      },
+      {
+        "date": 3,
+        "day": "tuesday"
+      },
+      {
+        "date": 4,
+        "day": "wednesday"
+      },
+      {
+        "date": 5,
+        "day": "thursday"
+      },
+      {
+        "date": 6,
+        "day": "friday"
+      },
+      {
+        "date": 7,
+        "day": "saturday"
+      }
+    ],
+    [
+      {
+        "date": 8,
+        "day": "sunday"
+      },
+      {
+        "date": 9,
+        "day": "monday"
+      },
+      {
+        "date": 10,
+        "day": "tuesday"
+      },
+      {
+        "date": 11,
+        "day": "wednesday"
+      },
+      {
+        "date": 12,
+        "day": "thursday"
+      },
+      {
+        "date": 13,
+        "day": "friday"
+      },
+      {
+        "date": 14,
+        "day": "saturday"
+      }
+    ],
+    [
+      {
+        "date": 15,
+        "day": "sunday"
+      },
+      {
+        "date": 16,
+        "day": "monday"
+      },
+      {
+        "date": 17,
+        "day": "tuesday"
+      },
+      {
+        "date": 18,
+        "day": "wednesday"
+      },
+      {
+        "date": 19,
+        "day": "thursday"
+      },
+      {
+        "date": 20,
+        "day": "friday"
+      },
+      {
+        "date": 21,
+        "day": "saturday"
+      }
+    ],
+    [
+      {
+        "date": 22,
+        "day": "sunday"
+      },
+      {
+        "date": 23,
+        "day": "monday"
+      },
+      {
+        "date": 24,
+        "day": "tuesday"
+      },
+      {
+        "date": 25,
+        "day": "wednesday"
+      },
+      {
+        "date": 26,
+        "day": "thursday"
+      },
+      {
+        "date": 27,
+        "day": "friday"
+      },
+      {
+        "date": 28,
+        "day": "saturday"
+      }
+    ]
+  ]
+}

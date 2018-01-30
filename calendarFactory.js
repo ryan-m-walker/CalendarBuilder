@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const C = require('./constants');
 const H = require('./helpers');
 
@@ -5,8 +7,11 @@ const H = require('./helpers');
 const calendarFactory = (date, options) => {
   options = {
     startDay: 'sunday',
+    pickedDay: undefined,
+    today: undefined,
     ...options
   }
+
 
   const buildWeek = () => {
     const week = [];
@@ -24,17 +29,34 @@ const calendarFactory = (date, options) => {
     let counter = 0;
     const calendarArr = [];
 
-    while (counter <= monthLength) {
+    while (counter <= monthLength - 1) {
       let weekArr = [];
       for (let i = 0; i < 7; i++) {
-        let weekday = week[i + 1];
+        let weekday = week[i];
         if ((weekday !== firstOfMonthStr) && !counter) {
-          weekArr.push(0);
-        } else if (counter > monthLength) {
-          weekArr.push(0);
-        } else {
-          weekArr.push(counter);
+          weekArr.push({
+            date: 0,
+            day: weekday
+          });
+        }
+        else if ((weekday === firstOfMonthStr) && !counter) {
           counter++;
+          weekArr.push({
+            date: counter,
+            day: weekday
+          });
+        } else if (counter > monthLength - 1) {
+          weekArr.push({
+            date: 0,
+            day: weekday
+          });
+        } else {
+          counter++;
+          weekArr.push({
+            date: counter,
+            day: weekday
+          });
+
         }
       }
       calendarArr.push(weekArr);
@@ -82,12 +104,12 @@ const textCalendar = (date, options) => {
   let calendarStr = '';
   calendar.calendar.forEach((row) => {
     row.forEach((day) => {
-      if (day === 0) {
+      if (day.date === 0) {
         calendarStr += '  ';
-      } else if (day < 10) {
-        calendarStr += ' ' + day;
+      } else if (day.date < 10) {
+        calendarStr += ' ' + day.date;
       } else {
-        calendarStr += day;
+        calendarStr += day.date;
       }
       calendarStr += ' '
     });
@@ -100,25 +122,11 @@ const textCalendar = (date, options) => {
 
 
 
-const myCalendar = textCalendar(new Date(), { startDay: 'wednesday' });
-console.log(myCalendar);
+const myCalendar = calendarFactory(new Date(2950, 1), {
+  pickedDay: 13
+});
+fs.writeFile('./data.json', JSON.stringify(myCalendar, null, 2), (err) => {
+  if (err) console.log(err);
+});
 
 
-
-// We Th Fr Sa Su Mo Tu
-
-
-
-
-
-// switch (day) {
-//   case (day === 0):
-//     calendarStr += '  ';
-//     break;
-//   case (day < 10):
-//     calendarStr += ' ' + day;
-//     break;
-//   default:
-//     console.log(day < 10)
-//     // calendarStr += day;
-// }
