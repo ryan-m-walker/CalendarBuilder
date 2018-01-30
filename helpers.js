@@ -3,7 +3,7 @@ const { FULL_MONTHS } = C;
 
 
 const capitalizeFirstLetter = (str) => (
-  str.substring(0, 1).toUpperCase() + str.substring(1, str.length)
+  str.substring(0, 1).toUpperCase() + str.substring(1, str.length).toLowerCase()
 );
 
 const getMonthStr = (date) => (
@@ -11,7 +11,7 @@ const getMonthStr = (date) => (
 );
 
 const getMonthLength = (month) => (
-  C.MONTH_LENGTHS[C.FULL_MONTHS.indexOf(month.toLowerCase())]
+  C.MONTH_LENGTHS[C.FULL_MONTHS.indexOf(month)]
 );
 
 

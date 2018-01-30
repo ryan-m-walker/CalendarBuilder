@@ -5,8 +5,13 @@ const H = require('./helpers');
 
 
 const calendarFactory = (date, options) => {
+
+  if (options.startDay) {
+    options.startDay = H.capitalizeFirstLetter(options.startDay);
+  };
+
   options = {
-    startDay: 'sunday',
+    startDay: 'Sunday',
     pickedDay: undefined,
     today: undefined,
     ...options
@@ -15,10 +20,10 @@ const calendarFactory = (date, options) => {
 
   const buildWeek = () => {
     const week = [];
-    let index = C.DAYS_OF_WEEK.indexOf(options.startDay.toLowerCase());
+    let index = C.DAYS_OF_WEEK.indexOf(options.startDay);
     for (let i = 0; i < 7; i++) {
       week.push(C.DAYS_OF_WEEK[index]);
-      index++
+      index++;
       if (index === 7) index = 0;
     }
     return week;
@@ -36,13 +41,6 @@ const calendarFactory = (date, options) => {
         if ((weekday !== firstOfMonthStr) && !counter) {
           weekArr.push({
             date: 0,
-            day: weekday
-          });
-        }
-        else if ((weekday === firstOfMonthStr) && !counter) {
-          counter++;
-          weekArr.push({
-            date: counter,
             day: weekday
           });
         } else if (counter > monthLength - 1) {
@@ -93,11 +91,11 @@ const textCalendar = (date, options) => {
   const calendar = calendarFactory(date, options);
 
   const headingOffset = Math.floor((21 - ((calendar.month.length + ('' + calendar.year).length) + 1)) / 2);
-  let month = new Array(headingOffset).join(' ') + H.capitalizeFirstLetter(calendar.month) + ' ' + calendar.year;
+  let month = new Array(headingOffset).join(' ') + calendar.month + ' ' + calendar.year;
  
   let week = '';
   calendar.week.forEach((day) => {
-    const str = H.capitalizeFirstLetter(day.substring(0,2));
+    const str = day.substring(0,2);
     week += str + ' ';
   });
 
@@ -122,7 +120,7 @@ const textCalendar = (date, options) => {
 
 
 
-const myCalendar = calendarFactory(new Date(2950, 1), {
+const myCalendar = calendarFactory(new Date(2018,1), {
   pickedDay: 13
 });
 fs.writeFile('./data.json', JSON.stringify(myCalendar, null, 2), (err) => {

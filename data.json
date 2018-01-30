@@ -1,137 +1,167 @@
 {
   "month": "February",
   "monthLength": 28,
-  "numberOfWeeks": 4,
-  "firstOfMonthStr": "sunday",
-  "year": 2950,
+  "numberOfWeeks": 5,
+  "firstOfMonthStr": "Thursday",
+  "year": 2018,
   "week": [
-    "sunday",
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday"
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
   ],
   "calendar": [
     [
       {
+        "date": 0,
+        "day": "Sunday"
+      },
+      {
+        "date": 0,
+        "day": "Monday"
+      },
+      {
+        "date": 0,
+        "day": "Tuesday"
+      },
+      {
+        "date": 0,
+        "day": "Wednesday"
+      },
+      {
         "date": 1,
-        "day": "sunday"
+        "day": "Thursday"
       },
       {
         "date": 2,
-        "day": "monday"
+        "day": "Friday"
       },
       {
         "date": 3,
-        "day": "tuesday"
-      },
+        "day": "Saturday"
+      }
+    ],
+    [
       {
         "date": 4,
-        "day": "wednesday"
+        "day": "Sunday"
       },
       {
         "date": 5,
-        "day": "thursday"
+        "day": "Monday"
       },
       {
         "date": 6,
-        "day": "friday"
+        "day": "Tuesday"
       },
       {
         "date": 7,
-        "day": "saturday"
-      }
-    ],
-    [
+        "day": "Wednesday"
+      },
       {
         "date": 8,
-        "day": "sunday"
+        "day": "Thursday"
       },
       {
         "date": 9,
-        "day": "monday"
+        "day": "Friday"
       },
       {
         "date": 10,
-        "day": "tuesday"
-      },
+        "day": "Saturday"
+      }
+    ],
+    [
       {
         "date": 11,
-        "day": "wednesday"
+        "day": "Sunday"
       },
       {
         "date": 12,
-        "day": "thursday"
+        "day": "Monday"
       },
       {
         "date": 13,
-        "day": "friday"
+        "day": "Tuesday"
       },
       {
         "date": 14,
-        "day": "saturday"
-      }
-    ],
-    [
+        "day": "Wednesday"
+      },
       {
         "date": 15,
-        "day": "sunday"
+        "day": "Thursday"
       },
       {
         "date": 16,
-        "day": "monday"
+        "day": "Friday"
       },
       {
         "date": 17,
-        "day": "tuesday"
-      },
-      {
-        "date": 18,
-        "day": "wednesday"
-      },
-      {
-        "date": 19,
-        "day": "thursday"
-      },
-      {
-        "date": 20,
-        "day": "friday"
-      },
-      {
-        "date": 21,
-        "day": "saturday"
+        "day": "Saturday"
       }
     ],
     [
       {
+        "date": 18,
+        "day": "Sunday"
+      },
+      {
+        "date": 19,
+        "day": "Monday"
+      },
+      {
+        "date": 20,
+        "day": "Tuesday"
+      },
+      {
+        "date": 21,
+        "day": "Wednesday"
+      },
+      {
         "date": 22,
-        "day": "sunday"
+        "day": "Thursday"
       },
       {
         "date": 23,
-        "day": "monday"
+        "day": "Friday"
       },
       {
         "date": 24,
-        "day": "tuesday"
-      },
+        "day": "Saturday"
+      }
+    ],
+    [
       {
         "date": 25,
-        "day": "wednesday"
+        "day": "Sunday"
       },
       {
         "date": 26,
-        "day": "thursday"
+        "day": "Monday"
       },
       {
         "date": 27,
-        "day": "friday"
+        "day": "Tuesday"
       },
       {
         "date": 28,
-        "day": "saturday"
+        "day": "Wednesday"
+      },
+      {
+        "date": 0,
+        "day": "Thursday"
+      },
+      {
+        "date": 0,
+        "day": "Friday"
+      },
+      {
+        "date": 0,
+        "day": "Saturday"
       }
     ]
   ]
