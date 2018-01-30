@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node ./calendarFactory.js"
+    "start": "babel-node ./calendarFactory.js",
+    "html": "babel-node ./HTMLCalendar.js"
   },
   "author": "",
   "license": "ISC",

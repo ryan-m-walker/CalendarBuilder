@@ -6,7 +6,7 @@ const H = require('./helpers');
 
 const calendarFactory = (date, options) => {
 
-  if (options.startDay) {
+  if (options && options.startDay) {
     options.startDay = H.capitalizeFirstLetter(options.startDay);
   };
 
@@ -90,7 +90,7 @@ const calendarFactory = (date, options) => {
 const textCalendar = (date, options) => {
   const calendar = calendarFactory(date, options);
 
-  const headingOffset = Math.floor((21 - ((calendar.month.length + ('' + calendar.year).length) + 1)) / 2);
+  const headingOffset = Math.ceil((21 - ((calendar.month.length + ('' + calendar.year).length) + 1)) / 2);
   let month = new Array(headingOffset).join(' ') + calendar.month + ' ' + calendar.year;
  
   let week = '';
@@ -120,11 +120,20 @@ const textCalendar = (date, options) => {
 
 
 
-const myCalendar = calendarFactory(new Date(2018,1), {
-  pickedDay: 13
-});
-fs.writeFile('./data.json', JSON.stringify(myCalendar, null, 2), (err) => {
-  if (err) console.log(err);
-});
+// const myCalendar = textCalendar(new Date());
+
+const calendarBuilder = {
+  data: calendarFactory,
+  text: textCalendar,
+};
 
 
+const myCalendar = calendarBuilder.text(new Date());
+console.log(myCalendar);
+
+// fs.writeFile('./data.json', JSON.stringify(myCalendar, null, 2), (err) => {
+//   if (err) console.log(err);
+// });
+
+
+module.exports = calendarFactory;

@@ -5,28 +5,16 @@
   "firstOfMonthStr": "Thursday",
   "year": 2018,
   "week": [
-    "Sunday",
-    "Monday",
-    "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday"
   ],
   "calendar": [
     [
-      {
-        "date": 0,
-        "day": "Sunday"
-      },
-      {
-        "date": 0,
-        "day": "Monday"
-      },
-      {
-        "date": 0,
-        "day": "Tuesday"
-      },
       {
         "date": 0,
         "day": "Wednesday"
@@ -42,9 +30,7 @@
       {
         "date": 3,
         "day": "Saturday"
-      }
-    ],
-    [
+      },
       {
         "date": 4,
         "day": "Sunday"
@@ -56,7 +42,9 @@
       {
         "date": 6,
         "day": "Tuesday"
-      },
+      }
+    ],
+    [
       {
         "date": 7,
         "day": "Wednesday"
@@ -72,9 +60,7 @@
       {
         "date": 10,
         "day": "Saturday"
-      }
-    ],
-    [
+      },
       {
         "date": 11,
         "day": "Sunday"
@@ -86,7 +72,9 @@
       {
         "date": 13,
         "day": "Tuesday"
-      },
+      }
+    ],
+    [
       {
         "date": 14,
         "day": "Wednesday"
@@ -102,9 +90,7 @@
       {
         "date": 17,
         "day": "Saturday"
-      }
-    ],
-    [
+      },
       {
         "date": 18,
         "day": "Sunday"
@@ -116,7 +102,9 @@
       {
         "date": 20,
         "day": "Tuesday"
-      },
+      }
+    ],
+    [
       {
         "date": 21,
         "day": "Wednesday"
@@ -132,9 +120,7 @@
       {
         "date": 24,
         "day": "Saturday"
-      }
-    ],
-    [
+      },
       {
         "date": 25,
         "day": "Sunday"
@@ -146,7 +132,9 @@
       {
         "date": 27,
         "day": "Tuesday"
-      },
+      }
+    ],
+    [
       {
         "date": 28,
         "day": "Wednesday"
@@ -162,6 +150,18 @@
       {
         "date": 0,
         "day": "Saturday"
+      },
+      {
+        "date": 0,
+        "day": "Sunday"
+      },
+      {
+        "date": 0,
+        "day": "Monday"
+      },
+      {
+        "date": 0,
+        "day": "Tuesday"
       }
     ]
   ]
