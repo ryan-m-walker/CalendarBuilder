@@ -8,7 +8,7 @@ const HTMLCalendar = (date, options) => {
   const header = 
     '<table border="0" cellpadding="0" cellspacing="0" class="month">\n' +
     '  <tr>\n' +
-    '    <th colspan="7" class="month">' + calendar.month + '</th>\n' +
+    '    <th colspan="7" class="month">' + calendar.month + ' ' + calendar.year + '</th>\n' +
     '  </tr>\n'
   ;
 
@@ -35,7 +35,7 @@ const HTMLCalendar = (date, options) => {
 };
 
 
-const res = HTMLCalendar(new Date());
+const res = HTMLCalendar(new Date(2020, 5));
 console.log(res);
 
 fs.writeFile('test.html', res, (err) => {
