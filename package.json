@@ -1,0 +1,19 @@
+{
+  "name": "calander.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./calendarFactory.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "moment": "^2.20.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
