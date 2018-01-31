@@ -1,5 +1,5 @@
 
-const FULL_MONTHS = [
+export const FULL_MONTHS = [
   'January',
   'February',
   'March',
@@ -14,7 +14,7 @@ const FULL_MONTHS = [
   'December'
 ];
 
-const ABRV_MONTHS = [
+export const ABRV_MONTHS = [
   'Jan',
   'Feb',
   'Mar',
@@ -29,7 +29,7 @@ const ABRV_MONTHS = [
   'Dec'
 ];
 
-const DAYS_OF_WEEK = [
+export const DAYS_OF_WEEK = [
   'Sunday',
   'Monday',
   'Tuesday',
@@ -39,7 +39,7 @@ const DAYS_OF_WEEK = [
   'Saturday'
 ];
 
-const MONTH_LENGTHS = [
+export const MONTH_LENGTHS = [
   31,
   28,
   31,
@@ -54,9 +54,3 @@ const MONTH_LENGTHS = [
   31
 ];
 
-module.exports = {
-  FULL_MONTHS,
-  ABRV_MONTHS,
-  DAYS_OF_WEEK,
-  MONTH_LENGTHS
-};

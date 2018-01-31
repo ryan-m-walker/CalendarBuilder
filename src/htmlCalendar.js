@@ -1,8 +1,7 @@
-const fs = require('fs');
-const calendarFactory = require('./calendarFactory');
+import calendarFactory from './calendarFactory';
 
 
-const HTMLCalendar = (date, options) => {
+const htmlCalendar = (date, options) => {
   const calendar = calendarFactory(date, options);
   
   const header = 
@@ -35,9 +34,4 @@ const HTMLCalendar = (date, options) => {
 };
 
 
-const res = HTMLCalendar(new Date(2020, 5));
-console.log(res);
-
-fs.writeFile('test.html', res, (err) => {
-  if (err) console.log(err);
-});
+export default htmlCalendar;

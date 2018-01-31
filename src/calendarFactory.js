@@ -1,7 +1,5 @@
-const fs = require('fs');
-
-const C = require('./constants');
-const H = require('./helpers');
+import * as C from './constants';
+import * as H from './helpers';
 
 
 const calendarFactory = (date, options) => {
@@ -15,8 +13,7 @@ const calendarFactory = (date, options) => {
     pickedDay: undefined,
     today: undefined,
     ...options
-  }
-
+  };
 
   const buildWeek = () => {
     const week = [];
@@ -29,7 +26,6 @@ const calendarFactory = (date, options) => {
     return week;
   };
 
-  
   const buildCalendar = () => {
     let counter = 0;
     const calendarArr = [];
@@ -62,23 +58,26 @@ const calendarFactory = (date, options) => {
     return calendarArr;
   };
 
-
   const month = H.getMonthStr(date);
+  const monthIndex = date.getMonth();
+  const monthAbrv = C.ABRV_MONTHS[monthIndex];
   const monthLength = H.getMonthLength(month);
   const week = buildWeek();
   const firstOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
   const firstOfMonthStr = C.DAYS_OF_WEEK[firstOfMonth.getDay()];
   const calendar = buildCalendar();
 
-
-
   const dataObj = {
     month,
+    monthIndex,
+    monthAbrv,
     monthLength,
     numberOfWeeks: calendar.length,
     firstOfMonthStr: firstOfMonthStr,
     year: date.getFullYear(),
     week,
+    weekAbrv: week.map((day) => day.substring(0,2)),
+    weekLetter: week.map((day) => day.substring(0,1)),
     calendar
   };
 
@@ -86,54 +85,5 @@ const calendarFactory = (date, options) => {
 };
 
 
+export default calendarFactory;
 
-const textCalendar = (date, options) => {
-  const calendar = calendarFactory(date, options);
-
-  const headingOffset = Math.ceil((21 - ((calendar.month.length + ('' + calendar.year).length) + 1)) / 2);
-  let month = new Array(headingOffset).join(' ') + calendar.month + ' ' + calendar.year;
- 
-  let week = '';
-  calendar.week.forEach((day) => {
-    const str = day.substring(0,2);
-    week += str + ' ';
-  });
-
-  let calendarStr = '';
-  calendar.calendar.forEach((row) => {
-    row.forEach((day) => {
-      if (day.date === 0) {
-        calendarStr += '  ';
-      } else if (day.date < 10) {
-        calendarStr += ' ' + day.date;
-      } else {
-        calendarStr += day.date;
-      }
-      calendarStr += ' '
-    });
-    calendarStr += '\n';
-  });
-
-  const fullStr = month + '\n' + week + '\n' + calendarStr;
-  return fullStr;
-};
-
-
-
-// const myCalendar = textCalendar(new Date());
-
-const calendarBuilder = {
-  data: calendarFactory,
-  text: textCalendar,
-};
-
-
-const myCalendar = calendarBuilder.text(new Date());
-console.log(myCalendar);
-
-// fs.writeFile('./data.json', JSON.stringify(myCalendar, null, 2), (err) => {
-//   if (err) console.log(err);
-// });
-
-
-module.exports = calendarFactory;
