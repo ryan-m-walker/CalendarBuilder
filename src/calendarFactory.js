@@ -41,7 +41,9 @@ const calendarFactory = (date = new Date(), options) => {
         if ((weekday !== firstOfMonthStr) && !counter) {
           weekArr.push({
             date: 0,
-            day: weekday
+            day: weekday,
+            dayAbrv: weekday.substring(0,3),
+            dayLetter: weekday.substring(0,1)
           });
         } else if (counter > monthLength - 1) {
           weekArr.push({
@@ -58,7 +60,6 @@ const calendarFactory = (date = new Date(), options) => {
             dayAbrv: weekday.substring(0,3),
             dayLetter: weekday.substring(0,1)
           });
-
         }
       }
       calendarArr.push(weekArr);

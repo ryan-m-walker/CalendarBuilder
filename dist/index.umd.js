@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["calenderBuilder"] = factory();
+		exports["calender-builder"] = factory();
 	else
-		root["calenderBuilder"] = factory();
+		root["calender-builder"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -137,7 +137,9 @@ var calendarFactory = function calendarFactory() {
         if (weekday !== firstOfMonthStr && !counter) {
           weekArr.push({
             date: 0,
-            day: weekday
+            day: weekday,
+            dayAbrv: weekday.substring(0, 3),
+            dayLetter: weekday.substring(0, 1)
           });
         } else if (counter > monthLength - 1) {
           weekArr.push({
