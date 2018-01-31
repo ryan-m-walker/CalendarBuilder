@@ -1,13 +1,10 @@
-import calenderFactory from './calendarFactory';
+import calendarBuilder from './calendarFactory';
 import textCalendar from './textCalendar';
 import htmlCalendar from './htmlCalendar';
 
 
-const calenderBuilder = {
-  data: calenderFactory,
-  text: textCalendar,
-  html: htmlCalendar,
+export {
+  calendarBuilder as default,
+  textCalendar,
+  htmlCalendar
 };
-
-
-export default calenderBuilder;

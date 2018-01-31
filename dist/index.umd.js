@@ -210,6 +210,7 @@ var MONTH_LENGTHS = exports.MONTH_LENGTHS = [31, 28, 31, 30, 31, 30, 31, 31, 30,
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.htmlCalendar = exports.textCalendar = exports.default = undefined;
 
 var _calendarFactory = __webpack_require__(0);
 
@@ -225,13 +226,9 @@ var _htmlCalendar2 = _interopRequireDefault(_htmlCalendar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var calenderBuilder = {
-  data: _calendarFactory2.default,
-  text: _textCalendar2.default,
-  html: _htmlCalendar2.default
-};
-
-exports.default = calenderBuilder;
+exports.default = _calendarFactory2.default;
+exports.textCalendar = _textCalendar2.default;
+exports.htmlCalendar = _htmlCalendar2.default;
 
 /***/ }),
 /* 3 */
@@ -329,23 +326,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var htmlCalendar = function htmlCalendar(date, options) {
   var calendar = (0, _calendarFactory2.default)(date, options);
 
-  var header = '<table border="0" cellpadding="0" cellspacing="0" class="month">\n' + '  <tr>\n' + '    <th colspan="7" class="month">' + calendar.month + ' ' + calendar.year + '</th>\n' + '  </tr>\n';
+  var header = '<table border="0" cellpadding="0" cellspacing="0" class="month">\n' + '  <thead>\n' + '    <tr>\n' + '      <th colspan="7" class="month">' + calendar.month + ' ' + calendar.year + '</th>\n' + '    </tr>\n';
 
-  var week = '  <tr>\n';
+  var week = '    <tr>\n';
   calendar.week.forEach(function (weekDay) {
-    week += '    <th class="' + weekDay.substring(0, 3).toLowerCase() + '">' + weekDay.substring(0, 3) + '</th>\n';
+    week += '      <th class="' + weekDay.substring(0, 3).toLowerCase() + '">' + weekDay.substring(0, 3) + '</th>\n';
   });
-  week += '  </tr>\n';
+  week += '    </tr>\n  </thead>\n';
 
-  var body = '';
+  var body = '  <tbody>\n';
   calendar.calendar.forEach(function (row) {
-    var rowHtml = '  <tr>\n';
+    var rowHtml = '    <tr>\n';
     row.forEach(function (date) {
-      rowHtml += '    <td class="' + (date.date ? date.day.substring(0, 3).toLowerCase() : 'noday') + '">' + (date.date ? date.date : '&nbsp;') + '</td>\n';
+      rowHtml += '      <td class="' + (date.date ? date.day.substring(0, 3).toLowerCase() : 'noday') + '">' + (date.date ? date.date : '&nbsp;') + '</td>\n';
     });
-    rowHtml += '  </tr>\n';
+    rowHtml += '    </tr>\n';
     body += rowHtml;
   });
+  body += '  </tbody>\n';
 
   var footer = '</table>\n';
 
