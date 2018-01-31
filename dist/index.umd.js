@@ -210,7 +210,7 @@ var MONTH_LENGTHS = exports.MONTH_LENGTHS = [31, 28, 31, 30, 31, 30, 31, 31, 30,
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.htmlCalendar = exports.textCalendar = exports.default = undefined;
+exports.CONSTANTS = exports.htmlCalendar = exports.textCalendar = exports.default = undefined;
 
 var _calendarFactory = __webpack_require__(0);
 
@@ -224,11 +224,18 @@ var _htmlCalendar = __webpack_require__(5);
 
 var _htmlCalendar2 = _interopRequireDefault(_htmlCalendar);
 
+var _constants = __webpack_require__(1);
+
+var CONSTANTS = _interopRequireWildcard(_constants);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _calendarFactory2.default;
 exports.textCalendar = _textCalendar2.default;
 exports.htmlCalendar = _htmlCalendar2.default;
+exports.CONSTANTS = CONSTANTS;
 
 /***/ }),
 /* 3 */
