@@ -142,13 +142,17 @@ var calendarFactory = function calendarFactory() {
         } else if (counter > monthLength - 1) {
           weekArr.push({
             date: 0,
-            day: weekday
+            day: weekday,
+            dayAbrv: weekday.substring(0, 3),
+            dayLetter: weekday.substring(0, 1)
           });
         } else {
           counter++;
           weekArr.push({
             date: counter,
-            day: weekday
+            day: weekday,
+            dayAbrv: weekday.substring(0, 3),
+            dayLetter: weekday.substring(0, 1)
           });
         }
       }
