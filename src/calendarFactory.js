@@ -2,7 +2,11 @@ import * as C from './constants';
 import * as H from './helpers';
 
 
-const calendarFactory = (date, options) => {
+const calendarFactory = (date = new Date(), options) => {
+
+  if (date._isAMomentObject) {
+    date = date.toDate();
+  }
 
   if (options && options.startDay) {
     options.startDay = H.capitalizeFirstLetter(options.startDay);
@@ -78,7 +82,7 @@ const calendarFactory = (date, options) => {
     week,
     weekAbrv: week.map((day) => day.substring(0,2)),
     weekLetter: week.map((day) => day.substring(0,1)),
-    calendar
+    calendar,
   };
 
   return dataObj;

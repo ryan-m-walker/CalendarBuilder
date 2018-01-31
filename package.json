@@ -6,6 +6,7 @@
   "scripts": {
     "build:main": "babel --copy-files --out-dir dist ",
     "build:umd": "webpack --output-filename index.umd.js",
+    "watch:umd": "webpack --output-filename index.umd.js --watch",
     "start": "babel-node ./calendarFactory.js",
     "html": "babel-node ./HTMLCalendar.js"
   },
