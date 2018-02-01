@@ -85,7 +85,7 @@ const calendarFactory = (date = new Date(), options) => {
     firstOfMonthStr: firstOfMonthStr,
     year: date.getFullYear(),
     week,
-    weekAbrv: week.map((day) => day.substring(0,2)),
+    weekAbrv: week.map((day) => day.substring(0,3)),
     weekLetter: week.map((day) => day.substring(0,1)),
     calendar,
   };
